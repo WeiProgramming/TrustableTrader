@@ -15,7 +15,6 @@ const HomeComponent = () => {
 
     const handleOnLoginClick = (e) => {
         auth.signInWithPopup(googleProvider).then(res => {
-            console.log(res.user);
             let user = res.user;
             dispatch(setUserLogin({
                 username: user.displayName,

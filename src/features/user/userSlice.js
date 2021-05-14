@@ -12,7 +12,7 @@ const userSlice = createSlice({
     reducers: {
         setUserLogin: (state, action) => {
             state.email = action.payload.email;
-            state.photo = action.payload.photoURL;
+            state.photo = action.payload.photo;
             state.username = action.payload.username;
         },
         setUserLogout: (state) => {
