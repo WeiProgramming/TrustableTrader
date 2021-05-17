@@ -16,7 +16,6 @@ app.use(cors());
 app.get(`/api/getCardsByFuzzyName`, (req, res) => {
     // get the post request query param data
     let searchInput = req.query.fname;
-    searchInput = searchInput.replace(' ', '%20');
     
     // build the url
     let apiUrl = `${ygoroot}?fname=${searchInput}`;

@@ -3,6 +3,12 @@ import styled from 'styled-components';
 import herobg from '../../assets/images/hero/ygo-bg-home.jpg';
 import {googleProvider, auth} from '../../firebase';
 
+// express api
+import {tryGetCardsByFuzzyName} from '../../shared/services/express/express-api';
+
+// Firebase
+import {setUserDetails} from '../../shared/services/firebase/firebase-db';
+
 // Redux
 import {useDispatch} from 'react-redux';
 
@@ -21,10 +27,9 @@ const HomeComponent = () => {
                 email: user.email,
                 photo: user.photoURL
             }))
-
+            setUserDetails(user.uid)
         })
     }
-
     return (
         <Home>
             {/* Hero */}

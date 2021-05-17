@@ -1,0 +1,1 @@
+export const devBaseURL = 'http://localhost:3001';

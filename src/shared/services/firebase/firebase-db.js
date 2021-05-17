@@ -1,10 +1,8 @@
-import db, {auth} from '../../../firebase';
+import db from '../../../firebase';
 
 export const setUserDetails = (userId) => {
-    // check if user already exists
-
     // add user details in
-    db.collection('userDetails').add({
+    db.collection('userDetails').doc(userId).set({
         userId: userId,
         verified: false,
         address: {

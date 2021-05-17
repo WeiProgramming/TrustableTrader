@@ -49,6 +49,7 @@ const NavigationComponent = () => {
           photo: user.photoURL,
         }),
       )
+      setUserDetails(user.uid)
       history.push('/')
     })
   }
