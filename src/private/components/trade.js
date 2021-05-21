@@ -1,11 +1,23 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components';
+import CardSearchModal from '../modal/card-search';
 
 const TradeComponent = () => {
+    let [showSearchModal, setShowSearchModal] = useState(false);
+
+    const onClickShowModal = () => {
+        setShowSearchModal(true);
+    }
+    const onClickCloseModal = () => {
+        setShowSearchModal(false);
+    }
     return (
         <Trade>
+            <CardSearchModal showModal={showSearchModal} closeModal={onClickCloseModal}></CardSearchModal>
             <Row>
-                <TradeContainer>Test</TradeContainer>
+                <TradeContainer>
+                    <SubmitBtn onClick={(e) => onClickShowModal()}>Show modal</SubmitBtn>
+                </TradeContainer>
                 <TradeContainer>Test</TradeContainer>
             </Row>
             <Row>
@@ -29,7 +41,7 @@ const TradeContainer = styled.div`
     background: red;
     height: 500px;
     width: 100%;
-    margin: 10% 5%;
+    margin: 3% 2%;
 `
 
 const Row = styled.div`
@@ -44,4 +56,11 @@ const Row = styled.div`
 
 const Form = styled.div`
 
+`
+
+const SubmitBtn = styled.a`
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: green;
 `
